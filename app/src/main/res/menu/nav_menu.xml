@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <item
+            android:id="@+id/ic_rupee"
+            android:icon="@drawable/ic_rupee"
+            android:title="@string/convert" />
+
+        <item
+            android:id="@+id/ic_charts"
+            android:icon="@drawable/ic_charts"
+            android:title="@string/Charts"/>
+
+        <item
+            android:id="@+id/ic_send_money"
+            android:icon="@drawable/ic_send_money"
+            android:title="@string/Send"/>
+
+        <item
+            android:id="@+id/ic_favorites"
+            android:icon="@drawable/ic_outline_favorite_border_24"
+            android:title="@string/Favorites"/>
+
+        <item
+            android:id="@+id/ic_more"
+            android:icon="@drawable/ic_baseline_more_horiz_24"
+            android:title="@string/more"/>
+
+
+
+</menu>
