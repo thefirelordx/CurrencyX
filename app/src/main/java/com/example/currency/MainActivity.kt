@@ -2,12 +2,11 @@ package com.example.currency
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.appcompat.app.ActionBar
+import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import com.example.currency.databinding.ActivityMainBinding
 import com.example.currency.fragments.*
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class MainActivity : AppCompatActivity() {
@@ -18,7 +17,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
@@ -48,7 +46,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun makeCurrentFragment(fragment: Fragment) =
             supportFragmentManager.beginTransaction().apply {
-                replace(R.id.fl_wrapper, fragment)
+                replace(R.id.myToolbar, fragment)
                 commit()
             }
 

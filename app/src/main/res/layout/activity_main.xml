@@ -7,12 +7,22 @@
     tools:context=".MainActivity"
     android:background="#EEEEEE">
 
-   <FrameLayout
-       android:id="@+id/fl_wrapper"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:layout_above="@id/bottom_navigation"/>
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        />
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/myToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:background="@color/purple_700"
+            android:minHeight="?actionBarSize"
+            android:theme="?actionBarTheme"
+            app:logo="@drawable/ic_user"
+            />
 
    <com.google.android.material.bottomnavigation.BottomNavigationView
        android:id="@+id/bottom_navigation"
