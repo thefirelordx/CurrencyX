@@ -1,22 +1,26 @@
 package com.example.currency
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toolbar
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import com.example.currency.databinding.ActivityMainBinding
 import com.example.currency.fragments.*
+import com.example.currency.main.MainViewModel
 
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-
+    private val  viewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
@@ -39,14 +43,13 @@ class MainActivity : AppCompatActivity() {
             true
 
 
-
         }
 
     }
 
     private fun makeCurrentFragment(fragment: Fragment) =
             supportFragmentManager.beginTransaction().apply {
-                replace(R.id.myToolbar, fragment)
+                replace(R.id.fl_wrapper, fragment)
                 commit()
             }
 
