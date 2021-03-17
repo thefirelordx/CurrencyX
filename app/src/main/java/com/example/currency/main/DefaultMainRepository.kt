@@ -1,8 +1,8 @@
 package com.example.currency.main
 
 import com.example.currency.data.CurrencyApi
+import com.example.currency.data.models.CurrencyResponse
 import com.example.currency.util.Resource
-import java.lang.Exception
 import javax.inject.Inject
 
 class DefaultMainRepository @Inject constructor(
@@ -20,7 +20,7 @@ class DefaultMainRepository @Inject constructor(
                 Resource.Error(response.message())
             }
         } catch (e :Exception){
-            Resource.Error(e.message ?: "An Error occured")
+            Resource.Error(e.message ?: "An Error occurred")
         }
     }
 }

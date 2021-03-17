@@ -4,5 +4,4 @@ package com.example.currency.fragments
 import androidx.fragment.app.Fragment
 import com.example.currency.R
 
-class ChartsFragment:Fragment(R.layout.fragment_charts) {
-}
+class ChartsFragment:Fragment(R.layout.fragment_charts)

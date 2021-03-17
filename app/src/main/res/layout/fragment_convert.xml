@@ -103,7 +103,7 @@
             tools:text="10 EUR = 15.0 USD" />
 
         <ProgressBar
-            android:id="@+id/progresBar"
+            android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"
