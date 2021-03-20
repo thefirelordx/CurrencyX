@@ -40,7 +40,9 @@ class ConvertFragment : Fragment(R.layout.fragment_convert) {
                        binding.progressBar.isVisible = false
                        binding.tvResult.setTextColor(Color.BLACK)
                        binding.tvResult.text = event.resultsText
-                    }
+                       binding.tvsinglevalue.setTextColor(Color.BLUE)
+                       binding.tvsinglevalue.text = event.rita
+                   }
                    is MainViewModel.CurrencyEvent.Failure -> {
                        binding.progressBar.isVisible = false
                        binding.tvResult.setTextColor(Color.RED)

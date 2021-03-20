@@ -16,10 +16,11 @@ import kotlin.math.round
 class MainViewModel @Inject constructor(
    private val repository: MainRepository,
    private val dispatchers: DispatcherProvider
+
 ): ViewModel(){
 
     sealed class CurrencyEvent{
-        class Success(val resultsText: String): CurrencyEvent()
+        class Success(val resultsText: String , val rita: String): CurrencyEvent()
         class Failure(val errorText: String): CurrencyEvent()
         object Loading : CurrencyEvent()
         object Empty : CurrencyEvent()
@@ -52,11 +53,16 @@ class MainViewModel @Inject constructor(
 
                     } else {
                         val convertCurrency = round(fromAmount * rate * 100) / 100
+                        val resCurrency = round( rate * 100) / 100
                         _conversion.value = CurrencyEvent.Success(
-                                "$fromAmount $fromCurrency = $convertCurrency $toCurrency"
+                                "$fromAmount $fromCurrency = $convertCurrency $toCurrency",
+                                "1 $fromCurrency = $resCurrency $toCurrency"
+
                         )
+
                     }
                 }
+
             }
         }
     }
