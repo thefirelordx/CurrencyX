@@ -31,9 +31,10 @@ class MainViewModel @Inject constructor(
     val conversion : StateFlow<CurrencyEvent> = _conversion
 
     fun  convert (
-            amountStr: String,
-            fromCurrency: String,
-            toCurrency: String
+        amountStr: String,
+        fromCurrency: String,
+        toCurrency: String,
+        hideKeyboard: Unit
     ) {
         val fromAmount = amountStr.toFloatOrNull()
         if (fromAmount == null) {

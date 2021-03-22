@@ -20,13 +20,12 @@ class MainActivity : AppCompatActivity() {
 
 
 
-
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
         val convertFragment = ConvertFragment()
         val chartsFragment = ChartsFragment()
         val sendFragment = SendFragment()
-        val favoritesFragment = FavoritesFragment()
+        val favoritesFragment = NewsFragment()
         val moreFragment = MoreFragment()
 
         makeCurrentFragment(convertFragment)

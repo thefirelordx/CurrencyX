@@ -5,6 +5,7 @@
     <string name="Send">Send</string>
     <string name="Favorites">Favorites</string>
     <string name="more">More</string>
+    <string name="News">news</string>
 
     <string-array name="currency_codes">
         <item>CAD</item>

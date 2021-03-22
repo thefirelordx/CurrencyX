@@ -9,17 +9,17 @@
     tools:context=".fragments.ConvertFragment">
 
     <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="92dp"
-            android:text="Converter"
-            android:textColor="@color/black"
-            android:textSize="35sp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.564" />
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Converter"
+        android:textColor="@color/black"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.564" />
 
 
         <TextView
@@ -128,7 +128,7 @@
         android:layout_width="300dp"
         android:layout_height="45dp"
         android:layout_marginTop="208dp"
-        android:text="1 EUR = 1.5 USD"
+
         android:textAlignment="center"
         android:textSize="20dp"
         android:textColor="@color/purple_700"

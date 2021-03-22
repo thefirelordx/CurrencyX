@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -30,8 +31,12 @@ class ConvertFragment : Fragment(R.layout.fragment_convert) {
                     binding.etFrom.text.toString(),
                     binding.spFromCurrency.selectedItem.toString(),
                     binding.spToCurrency.selectedItem.toString(),
+                    it.hideKeyboard()
+
+
             )
         }
+
 
         lifecycleScope.launchWhenStarted {
             viewModel.conversion.collect { event ->
@@ -61,6 +66,10 @@ class ConvertFragment : Fragment(R.layout.fragment_convert) {
         return binding.root
     }
 
+fun View.hideKeyboard(){
+        val imm = requireContext().getSystemService(android.content.Context.INPUT_METHOD_SERVICE) as? InputMethodManager
+        imm?.hideSoftInputFromWindow(this.windowToken,0)
+    }
 
 
     override fun onDestroyView() {
