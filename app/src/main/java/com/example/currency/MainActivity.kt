@@ -1,5 +1,6 @@
 package com.example.currency
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -17,6 +18,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setSupportActionBar(binding.myToolbar)
+
+        supportActionBar?.setIcon (R.drawable.ic_user)
+        supportActionBar?.title = ""
+        binding.myToolbar.setOnClickListener {
+            val intent = Intent(this,Login::class.java)
+            startActivity(intent)
+
+        }
+
+
+
+
+
 
 
 
@@ -44,6 +59,8 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
+
 
     private fun makeCurrentFragment(fragment: Fragment) =
             supportFragmentManager.beginTransaction().apply {
