@@ -33,8 +33,7 @@ class MainViewModel @Inject constructor(
     fun  convert (
         amountStr: String,
         fromCurrency: String,
-        toCurrency: String,
-        hideKeyboard: Unit
+        toCurrency: String
     ) {
         val fromAmount = amountStr.toFloatOrNull()
         if (fromAmount == null) {

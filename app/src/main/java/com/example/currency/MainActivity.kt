@@ -1,7 +1,10 @@
 package com.example.currency
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.MotionEvent
+import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
@@ -9,9 +12,22 @@ import com.example.currency.databinding.ActivityMainBinding
 import com.example.currency.fragments.*
 import dagger.hilt.android.AndroidEntryPoint
 
+
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+
+
+    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
+        if (currentFocus != null) {
+            val imm: InputMethodManager =
+                getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
+        }
+        return super.dispatchTouchEvent(ev)
+    }
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,17 +36,21 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         setSupportActionBar(binding.myToolbar)
 
-        supportActionBar?.setIcon (R.drawable.ic_user)
+        val isLoggedin = getSharedPreferences("Loggedin", Context.MODE_PRIVATE).getBoolean("isLoggedin", false)
+
+
+
+        supportActionBar?.setIcon(R.drawable.ic_user)
         supportActionBar?.title = ""
+
         binding.myToolbar.setOnClickListener {
-            val intent = Intent(this,Login::class.java)
-            startActivity(intent)
-
+            if(isLoggedin){
+                startActivity(Intent(this,Profile::class.java))
+            }
+            else{
+                startActivity(Intent(this, Login::class.java))
+            }
         }
-
-
-
-
 
 
 
@@ -70,6 +90,8 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
+
 
 
 
